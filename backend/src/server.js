@@ -10,10 +10,13 @@ import snippetRoutes from './routes/snippets.js';
 
 const app = express();
 
+const frontendUrl = process.env.FRONTEND_URL ? process.env.FRONTEND_URL.replace(/\/$/, "") : null;
+const allowedOrigins = frontendUrl 
+    ? [frontendUrl, 'http://localhost:5173', 'http://localhost:5174'] 
+    : ['http://localhost:5173', 'http://localhost:5174'];
+
 app.use(cors({
-    origin: process.env.FRONTEND_URL 
-        ? [process.env.FRONTEND_URL, 'http://localhost:5173', 'http://localhost:5174'] 
-        : ['http://localhost:5173', 'http://localhost:5174'],
+    origin: allowedOrigins,
     credentials: true
 }))
 app.use(express.json());
