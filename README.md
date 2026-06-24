@@ -1,5 +1,7 @@
 # CodeLens
 
+**🌍 Live Demo:** [https://codelens-ecru-psi.vercel.app/](https://codelens-ecru-psi.vercel.app/)
+
 An AI-powered web application that analyzes, explains, and refactors your code in real time. Built with a React (Vite) frontend, a Node.js (Express) backend, and powered by the Groq API (Llama 3.3 70B) for lightning-fast inference.
 
 ## Features
